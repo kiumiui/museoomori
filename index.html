@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSEOOMORI</title>
+    <!-- Libreria de Aframe -->
+     <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+</head>
+<body>
+     <a-assets>
+        <!-- Imagenes -->
+        <img id="roof" src="assets/roof.jpg">
+        <img id="wall" src="assets/fl.png">
+        <img id="floor" src="assets/fl.png">
+        <img id="wall2" src="assets/10.webp">
+        <img id="all" src="assets/8.png">
+        <img id="omo" src="assets/4.jpg">
+        <img id="omr" src="assets/2.jpg">
+        <img id="flor" src="assets/1.jpg">
+        <img id="wa" src="assets/3.jpg">
+        <img id="all3" src="assets/11.jpg">
+        <img id="all2" src="assets/8.png">
+        <img id="aw" src="assets/5.jpg">
+        <img id="wi" src="assets/wi.jpg">
+        <img id="fic" src="assets/des.png">
+        <img id="alfo" src="assets/9.webp">
+        <img id="marco" src="assets/marco.jpg">
+        
+        <!-- Musica -->
+        <audio id="music" src="assets/song.mp3" preload="auto"></audio>
+
+        <!-- Modelos 3D -->
+        <a-assets-item id="mode" src="./assets/omori.glb"></a-assets-item>
+        <a-assets-item id="basil1" src="./assets/basil.glb"></a-assets-item>
+        <a-assets-item id="mew" src="./assets/mew.glb"></a-assets-item>
+        <a-assets-item id="som" src="./assets/som.glb"></a-assets-item>
+        <a-assets-item id="mail" src="./assets/mail.glb"></a-assets-item>
+        <a-assets-item id="bun" src="./assets/bun.glb"></a-assets-item>
+     </a-assets>
+    <!-- Escena del proyecto VR -->
+     <a-scene xr-mode-ui="enterAREnabled: false">
+      <a-entity camera look-controls position="0 1.6 2.5" sound="src: #music; autoplay: true; loop: true; volume: 0.5"></a-entity>
+        <!-- 
+        -------------------------------------
+                ESTRUCTURA 
+        -------------------------------------
+        -->
+        <!-- Piso -->
+        <a-plane src="#floor" -90="" 0="" 0"="" width="10" height="10" rotation="-90 0 0"></a-plane>
+        <!-- Alfombra -->
+        <a-plane src="#alfo" scale="1.3 1 1" position="0 0.01 0" rotation="-90 0 0" width="5" height="5"></a-plane>
+        <!-- Muro fondo -->
+         <a-plane src="#wall" scale="1 1 1" position="0 2 -5" width="10" height="4"></a-plane>
+         <a-plane src="#wall2" scale="0.6 0.83 1" position="0 2 -4.9" width="10" height="4"></a-plane>
+         <a-plane src="#wall" scale="0.6 0.83 1" position="0 2 -5" width="10" height="4"></a-plane>
+        <!-- Muro izquierdo -->
+         <a-plane src="#wall" material="src: #wall; repeat: 2.38 2.42" position="-5 2 0" rotation="0 90 0" width="10" height="4"></a-plane>
+        <!-- Muro derecho -->
+        <a-plane src="#wall" material="src: #wall; repeat: 2.38 2.42" position="5 2 0" rotation="0 -90 0" width="10" height="4"></a-plane>
+         <!-- Muro frontal -->
+        <a-plane src="#wall" material="src: #wall; repeat: 2.38 2.42" position="0 2 5" rotation="0 180 0" width="10" height="4"></a-plane>
+        <!-- Poster -->
+        <a-plane src="#all2" position="0 1.959 4.936" scale="2.99 1.1 1" rotation="0 180 0" width="2" height="3"></a-plane>
+        <!-- Techo -->
+        <a-plane src="#roof" material="src: #roof; repeat: 2 1" position="0 4 0" rotation="90 0 0" width="10" height="10"></a-plane>
+        <!-- 
+        -------------------------------------
+                  OBRAS
+        -------------------------------------
+        -->
+        <!-- Cuadros -->
+         <!-- Izquierda 1 -->
+        <a-plane src="#flor" scale="0.75 1 1" position="-4.85 2.264 2.788" position="-4.886 2.264 2.788" rotation="0 90 0" width="2" height="2"></a-plane>
+        <a-plane src="#marco" scale="0.75 1 1" position="-4.879 2.264 2.788" rotation="0 90 0" width="2.1" height="2.1"></a-plane>
+        <!-- Izquerda 2 -->
+        <a-plane src="#omo" scale="0.75 1 1" position="-4.85 2.264 -0.016" position="-4.886 2.264 -0.016" rotation="0 90 0" width="2" height="2"></a-plane>
+        <a-plane src="#marco" scale="0.75 1 1" position="-4.879 2.264 -0.016" rotation="0 90 0" width="2.1" height="2.1"></a-plane>
+        <!-- Izquerda 3 -->
+        <a-plane src="#omr" scale="0.75 1 1" position="-4.85 2.264 -2.788" position="-4.886 2.264 -2.788" rotation="0 90 0" width="2" height="2"></a-plane>
+        <a-plane src="#marco" scale="0.75 1 1" position="-4.879 2.264 -2.788" rotation="0 90 0" width="2.1" height="2.1"></a-plane>
+        <!-- Derecha 1 -->
+        <a-plane src="#wa" scale="0.75 1 1" position="4.850 2.264 2.788" rotation="0 -90 0" width="2" height="2"></a-plane>
+        <a-plane src="#marco" scale="0.75 1 1" position="4.879 2.264 2.788" rotation="0 -90 0" width="2.1" height="2.1"></a-plane>
+        <!-- Derecha 2 -->
+        <a-plane src="#aw" scale="0.75 1 1" position="4.850 2.264 -0.016" rotation="0 -90 0" width="2" height="2"></a-plane>
+        <a-plane src="#marco" scale="0.75 1 1" position="4.879 2.264 -0.016" rotation="0 -90 0" width="2.1" height="2.1"></a-plane>
+        <!-- Derecha 3 -->
+        <a-plane src="#wi" scale="0.75 1 1" position="4.850 2.264 -2.788" rotation="0 -90 0" width="2" height="2"></a-plane>
+        <a-plane src="#marco" scale="0.75 1 1" position="4.879 2.264 -2.788" rotation="0 -90 0" width="2.1" height="2.1"></a-plane>
+        <!-- Elementos 3D -->
+         <!-- Atriles -->
+          <!-- Atril Izquierda 1 -->
+           <a-box color="white" position="-4.3 1.02 0.009" rotation="0 0 -30.47" scale="0.69 0.16 7" depth="1" height="1" width="1"></a-box>
+         <a-cylinder color="white" position="-4.406 0.511 2.791" rotation="0 0 0" scale="0.15 10.02 0.15" radius="0.5" height="0.1"></a-cylinder>
+         <a-plane src="#fic" position="-4.257 1.093 2.767" rotation="-59.86 90 0" scale="1.05 0.68 1.11" depth="1" height="1" width="1"></a-plane>
+          <!-- Atril Izquierda 2 -->
+         <a-cylinder color="white" position="-4.406 0.511 -0.016" rotation="0 0 0" scale="0.15 10.02 0.15" radius="0.5" height="0.1"></a-cylinder>
+         <a-plane src="#fic" position="-4.257 1.093 -0.016" rotation="-59.86 90 0" scale="1.05 0.68 1.11" depth="1" height="1" width="1"></a-plane>
+          <!-- Atril Izquierda 3 -->
+         <a-cylinder color="white" position="-4.406 0.511 -2.788" rotation="0 0 0" scale="0.15 10.02 0.15" radius="0.5" height="0.1"></a-cylinder>
+         <a-plane src="#fic" position="-4.257 1.093 -2.788" rotation="-59.86 90 0" scale="1.05 0.68 1.11" depth="1" height="1" width="1"></a-plane>
+          <!-- Atril Derecha 1 -->
+           <a-box color="white" position="4.3 1.02 -0.021" rotation="0 0 30.47" scale="0.69 0.16 7" depth="1" height="1" width="1"></a-box>
+         <a-cylinder color="white" position="4.406 0.511 2.791" rotation="0 0 0" scale="0.15 10.02 0.15" radius="0.5" height="0.1"></a-cylinder>
+         <a-plane src="#fic" position="4.257 1.105 2.767" rotation="-59.47 270 0" scale="1.05 0.68 1.11" depth="1" height="1" width="1"></a-plane>
+          <!-- Atril Derecha 2 -->
+         <a-cylinder color="white" position="4.406 0.511 -0.016" rotation="0 0 0" scale="0.15 10.02 0.15" radius="0.5" height="0.1"></a-cylinder>
+         <a-plane src="#fic" position="4.257 1.093 -0.016" rotation="-59.86 270 0" scale="1.05 0.68 1.11" depth="1" height="1" width="1"></a-plane>
+          <!-- Atril Derecha 3 -->
+         <a-cylinder color="white" position="4.406 0.511 -2.788" rotation="0 0 0" scale="0.15 10.02 0.15" radius="0.5" height="0.1"></a-cylinder>
+         <a-plane src="#fic" position="4.257 1.093 -2.788" rotation="-59.86 270 0" scale="1.05 0.68 1.11" depth="1" height="1" width="1"></a-plane>
+        <!-- Figuras 3D -->
+         <a-gltf-model rotation="0 45 0" position="2.785 -0.165 -3.683" scale="3 3 3" src="#mode" gltf-model="./assets/omori.glb"></a-gltf-model>
+         <a-gltf-model rotation="0 20 0" position="-2.801 -0.165 -3.76" scale="3.5 3.5 3.5" src="#basil1" gltf-model="./assets/basil.glb"></a-gltf-model>
+        <a-gltf-model rotation="0 -180 0" position="0.046 -0.165 4.449" scale="1 1 1" src="#mew"></a-gltf-model>
+        <a-gltf-model rotation="0 -130 0" position="4.386 2.904 4.405" scale="0.3 0.3 0.3" src="#som" gltf-model="./assets/som.glb"></a-gltf-model>
+        <a-gltf-model position="-4.335 0.388 4.363" scale="0.2 0.2 0.2" src="#mail" gltf-model="./assets/mail.glb" rotation="0 130 0"></a-gltf-model>
+        <a-gltf-model position="-4.189 0.116 3.885" scale="0.05 0.05 0.05" src="#bun" gltf-model="./assets/bun.glb" rotation="0 130 0"></a-gltf-model>
+         
+         <!-- 
+        -------------------------------------
+                  LUCES
+        -------------------------------------
+        -->
+        
+        <a-light position="0 3.5 0" light="type: ambient; intensity: 1; color: beige;"></a-light>
+        <a-light rotation="-90 90 0" position="-4.365 5.585 2.815" light="angle: 20; color: #f4e98c; decay: -1; distance: 4.73; intensity: 6.36; penumbra: 0.11; type: spot"></a-light>></a-light>
+        <a-light rotation="-90 90 0" position="-4.365 5.585 -0.016" light="angle: 20; color: #f4e98c; decay: -1; distance: 4.73; intensity: 6.36; penumbra: 0.11; type: spot"></a-light>></a-light>
+        <a-light rotation="-90 90 0" position="-4.365 5.585 -2.806" light="angle: 20; color: #f4e98c; decay: -1; distance: 4.73; intensity: 6.36; penumbra: 0.11; type: spot"></a-light>
+        <a-light position="2.712 3.781 0.24" light="angle: 20; color: #f4e98c; decay: -0.45; distance: 5.65; intensity: 6.36; penumbra: 0.11; type: spot" rotation="-29.999999999999996 0 0"></a-light>
+        <a-light position="-2.871 3.781 0.24" light="angle: 20; color: #f4e98c; decay: -0.45; distance: 5.65; intensity: 6.36; penumbra: 0.11; type: spot" rotation="-29.999999999999996 0 0"></a-light>
+        <a-light position="0.091 1.88 1.498" light="angle: 20; color: #f4e98c; decay: -0.45; distance: 5.65; intensity: 4; penumbra: 0.8; type: spot" rotation="-25 180 0"></a-light>
+        <a-light rotation="-90 90 0" position="4.313 5.585 2.815" light="angle: 20; color: #f4e98c; decay: -1; distance: 4.73; intensity: 6.36; penumbra: 0.11; type: spot"></a-light>
+        <a-light rotation="-90 90 0" position="4.313 5.585 0.003" light="angle: 20; color: #f4e98c; decay: -1; distance: 4.73; intensity: 6.36; penumbra: 0.11; type: spot"></a-light>
+        <a-light rotation="-90 90 0" position="4.313 5.585 -2.823" light="angle: 20; color: #f4e98c; decay: -1; distance: 4.73; intensity: 6.36; penumbra: 0.11; type: spot"></a-light>
+
+
+     </a-scene>
+</body>
+</html>
